@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "hdbo-b"
-version = "0.1.2"
+version = "0.2.0"
 description = "High-Dimentional Bayesian Benchmark (HDBO-B)"
 license = "MIT"
 authors = ["yiyuiii <yiyuiii@foxmail.com>"]
@@ -30,6 +30,7 @@ hebo = ["hebo"]
 alebo =  ["ax-platform"]
 pde = ["py-pde"]
 mip = ["pyscipopt"]
+hpobench = ["pyarrow", "fastparquet"]
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

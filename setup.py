@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="HDBOBenchmark",
-    version="0.1.2",
+    version="0.2.0",
     install_requires=[
         "botorch>=0.8.5",
         "numpy>=1.21.5",

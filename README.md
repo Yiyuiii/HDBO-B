@@ -1,8 +1,8 @@
 <!--
  * @Author         : yiyuiii
- * @Date           : 2024-06-04 20:00:00
+ * @Date           : 2025-04-06 20:00:00
  * @LastEditors    : yiyuiii
- * @LastEditTime   : 2024-06-04 20:00:00
+ * @LastEditTime   : 2024-04-06 20:00:00
  * @Description    : None
  * @GitHub         : https://github.com/yiyuiii/HDBO-B
 -->
@@ -32,7 +32,6 @@ To install HDBO-B package, choose one below:
 
 - `git clone https://github.com/yiyuiii/HDBO-B && cd HDBO-B && pip install -e .` (You may get example codes **ONLY** by this way.)
 - `pip install hdbo-b`
-- `wget https://github.com/Yiyuiii/HDBO-B/releases/download/whl/hdbo_b-0.1.1-py3-none-any.whl && pip install hdbo_b-0.1.1-py3-none-any.whl`
 
 Some realistic tasks and methods may require extra packages, please check `requirements.txt` and instructions in `HDBOBenchmark/funcs/realistic/().py`.
 
@@ -145,7 +144,10 @@ Algorithms can be found in `./examples/algorithms` (more original) and `./exampl
 
 ## :clipboard: Changelog
 
-#### 2023.06.06 > v0.1.1 :fire:
+#### 2025.04.06 > v0.2.0 :fire:
+- Added HPOBench and BBOB synthetic functions. Paper accepted by IJCNN 2025. 
+
+#### 2023.06.06 > v0.1.1
 - Fixed logging.
 
 #### 2023.06.03 > v0.1.0
