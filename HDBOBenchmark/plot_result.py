@@ -17,8 +17,7 @@ from HDBOBenchmark.utils.os import load_pickle
 wilcoxon_method = "ALEBO"
 
 
-def plot_result(func_list, method_list, result_path='./result'):
-
+def plot_result(func_list, method_list, result_path="./result"):
 
     max_len = 100
 
@@ -69,7 +68,9 @@ def plot_result(func_list, method_list, result_path='./result'):
                 excel_data[str(excel_i)][method + "_std"].append("N/A")
             wilcoxon_data[method] = list()
             load_cnt = 0
-            load_path = os.path.join(result_path, f"{method}/{name}_{dim}_{load_cnt}.pkl")
+            load_path = os.path.join(
+                result_path, f"{method}/{name}_{dim}_{load_cnt}.pkl"
+            )
             data = list()
             while os.path.exists(load_path):
                 result_dict = load_pickle(load_path)[0]
@@ -100,7 +101,9 @@ def plot_result(func_list, method_list, result_path='./result'):
                 else:
                     logger.warning(f"{load_path} is not in valid format.")
                 load_cnt += 1
-                load_path = os.path.join(result_path, f"{method}/{name}_{dim}_{load_cnt}.pkl")
+                load_path = os.path.join(
+                    result_path, f"{method}/{name}_{dim}_{load_cnt}.pkl"
+                )
             if len(data) == 0:  # no data
                 continue
             for d in data:
@@ -157,7 +160,7 @@ def plot_result(func_list, method_list, result_path='./result'):
         # Rank calculation
         rank_data = {method: [] for method in method_list}
         for method in method_list:
-            if len(method_data[method])==0:
+            if len(method_data[method]) == 0:
                 method_data.pop(method)
                 method_list.remove(method)
         min_traj_length = min(len(trajs) for trajs in method_data.values())
@@ -179,9 +182,15 @@ def plot_result(func_list, method_list, result_path='./result'):
                         "x": np.arange(1, len(traj_values[method]) + 1),
                         "y": traj_values[method],
                         "name": method,
-                    })
+                    }
+                )
 
-        plot_rank_data(method_list=method_list, rank_data=rank_data, save_dir=save_dir, fig_name=name)
+        plot_rank_data(
+            method_list=method_list,
+            rank_data=rank_data,
+            save_dir=save_dir,
+            fig_name=name,
+        )
         for method in method_list:
             method_rank_data[method].extend(rank_data[method])
 
@@ -193,7 +202,13 @@ def plot_result(func_list, method_list, result_path='./result'):
         #         os.remove(save_excel_path)
         #     df.to_csv(save_excel_path, float_format="%.2f")
 
-    plot_rank_data(method_list=method_list, rank_data=method_rank_data, save_dir=save_dir, fig_name='all')
+    plot_rank_data(
+        method_list=method_list,
+        rank_data=method_rank_data,
+        save_dir=save_dir,
+        fig_name="all",
+    )
+
 
 def plot_rank_data(method_list, rank_data, save_dir, fig_name):
     linestyle_list = get_linestyle_list(len(method_list))
@@ -222,6 +237,7 @@ def plot_rank_data(method_list, rank_data, save_dir, fig_name):
     plt.savefig(save_rank_path, bbox_inches="tight", dpi=300)
     logger.info(f"Rank img saved at {save_rank_path}.")
     plt.close(fig)
+
 
 def move_result(cur_dir, target_dir):
     import shutil

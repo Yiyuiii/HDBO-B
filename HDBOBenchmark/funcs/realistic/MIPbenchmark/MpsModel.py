@@ -144,7 +144,9 @@ class MPSModel(TestFunction):
             item["lhs"] = self.mpsModel.getLhs(cons)  # lhs < xxx < rhs
             item["rhs"] = self.mpsModel.getRhs(cons)
             constraint_param_list.append(item)
-            coefficient_dict = {var.name: var.getLPSol() for var in self.mpsModel.getVars()}
+            coefficient_dict = {
+                var.name: var.getLPSol() for var in self.mpsModel.getVars()
+            }
             coefficient_dict.update(
                 self.mpsModel.getValsLinear(cons) if cons.isLinear() else {}
             )

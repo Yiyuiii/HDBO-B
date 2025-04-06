@@ -86,7 +86,6 @@ def test_func_y_bound():
     get_func_y_bound(args, method=botorch_optimize)
 
 
-
 if __name__ == "__main__":
     test_plot_func()
     # test_func_y_bound()

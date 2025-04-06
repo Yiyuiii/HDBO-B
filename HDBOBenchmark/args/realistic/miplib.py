@@ -3,8 +3,9 @@ from HDBOBenchmark.funcs.realistic.MIPbenchmark.MpsModel import MPSModel as get_
 
 # enlight_hard sp150x300d neos-787933 nu25-pr12 neos-1122047 neos-1171448 neos-827175
 
+
 class SCIPArgs(ArgsTemplate):
-    def __init__(self, mps_path = "enlight_hard", t_max=20):
+    def __init__(self, mps_path="enlight_hard", t_max=20):
         super().__init__()
         self.name = "miplib"
         # BO
@@ -25,7 +26,7 @@ class SCIPArgs(ArgsTemplate):
 
 
 class RawArgs(ArgsTemplate):
-    def __init__(self, mps_path = "enlight_hard"):
+    def __init__(self, mps_path="enlight_hard"):
         super().__init__()
         self.name = "miplib"
         # BO
