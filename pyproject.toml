@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "hdbo-b"
+version = "0.1.2"
+description = "High-Dimentional Bayesian Benchmark (HDBO-B)"
+license = "MIT"
+authors = ["yiyuiii <yiyuiii@foxmail.com>"]
+readme = "README.md"
+homepage = "https://github.com/yiyuiii/hdbo-b"
+repository = "https://github.com/yiyuiii/hdbo-b"
+documentation = "https://github.com/yiyuiii/hdbo-b#readme"
+keywords = ["hdbo", "benchmark"]
+packages = [
+    { include = "HDBOBenchmark" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+botorch = "^0.8.5"
+matplotlib = "^3.5.2"
+pillow = "^9.2.0"
+scipy = "^1.9.1"
+numpy = "^1.21.5"
+seaborn = "^0.13.1"
+requests = "^2.31.0"
+
+[tool.poetry.dev-dependencies]
+
+[tool.poetry.extras]
+hebo = ["hebo"]
+alebo =  ["ax-platform"]
+pde = ["py-pde"]
+mip = ["pyscipopt"]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

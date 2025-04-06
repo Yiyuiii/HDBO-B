@@ -1,0 +1,2 @@
+class Struct(object):
+    pass

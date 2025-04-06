@@ -1,0 +1,22 @@
+botorch>=0.9.2
+numpy>=1.21.5,<1.25
+scipy>=1.9.1
+matplotlib>=3.5.2
+seaborn>=0.13.1
+pillow>=9.2.0
+requests
+
+# For HEBO
+# hebo==0.3.5
+
+# For ALEBO
+ax-platform>=0.3.4
+
+# For MIPBenchmark
+# pyscipopt  #  https://github.com/scipopt/PySCIPOpt
+
+# For pde
+# py-pde
+
+# For HPOBench
+# pyarrow fastparquet
